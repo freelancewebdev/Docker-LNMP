@@ -6,25 +6,36 @@ Contains:
 - Nginx
 - PHP-FPM
 - PhpMyAdmin
-- Mailhog 
+- Mailhog
 
-## Usage 
+## Usage
 
-Clone repository to local directory, cd into the repository and run 
-
-```bash
-chmod a+e local.sh 
-```
-## Launch
+Clone repository to local directory, cd into the repository and run
 
 ```bash
-./local.sh start
+chmod a+e local.sh
 ```
 
-## Stop
+### Launch
 
 ```bash
 ./local.sh start
 ```
 
+### Stop
 
+```bash
+./local.sh start
+```
+
+### Rebuild
+
+```bash
+./local.sh rebuild
+```
+
+### Exec - Enter Container Bash Prompt
+
+```bash
+./local.sh ssh
+```
