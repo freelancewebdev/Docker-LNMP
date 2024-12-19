@@ -13,7 +13,7 @@ Contains:
 Clone repository to local directory, cd into the repository and run
 
 ```bash
-chmod a+e local.sh
+chmod a+x local.sh
 ```
 
 ### Launch
