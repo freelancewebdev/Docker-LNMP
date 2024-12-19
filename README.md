@@ -39,3 +39,17 @@ chmod a+e local.sh
 ```bash
 ./local.sh ssh
 ```
+
+## Access Services
+
+### Webserver Access
+
+[localhost:8888](localhost:8888)
+
+### PHPMyAdmin Access
+
+[localhost:8080](localhost:8080)
+
+### Mailhog Access
+
+[localhost:8025](localhost:8025)
