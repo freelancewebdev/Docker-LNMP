@@ -1,0 +1,51 @@
+services:
+  app:
+    build:
+      context: ./docker/services/app
+      dockerfile: app.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./src/public:/var/www
+  mysql:
+    image: mariadb:10.5.8
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: test
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./docker/services/mysql:/var/lib/mysql
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+    ports:
+      - "8080:80"
+    depends_on:
+      - mysql
+  nginx:
+    build:
+      context: ./docker/services/nginx
+      dockerfile: nginx.dockerfile
+    working_dir: /var/www
+    volumes:
+      - ./src/public:/var/www
+    ports:
+      - "8888:80"
+    depends_on:
+      - phpmyadmin
+      - mysql
+  mailhog:
+    image: jcalonso/mailhog:latest
+    logging:
+      driver: "none"
+    ports:
+      - "8025:8025"
+    environment:
+      - MAIL_HOST=mailhog
+      - MAIL_PORT=1025

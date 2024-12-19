@@ -1,0 +1,5 @@
+# exclude everything
+docker/services/mysql/*
+
+# exception to the rule
+!docker/services/mysql/.gitkeep 
