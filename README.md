@@ -25,7 +25,7 @@ chmod a+e local.sh
 ### Stop
 
 ```bash
-./local.sh start
+./local.sh stop
 ```
 
 ### Rebuild
