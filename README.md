@@ -42,6 +42,8 @@ chmod a+e local.sh
 
 ## Access Services
 
+Use the following URLs in your browser.
+
 ### Webserver Access
 
 [localhost:8888](localhost:8888)
